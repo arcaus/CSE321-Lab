@@ -1,0 +1,117 @@
+
+┌──(kali㉿kali)-[~]
+└─$ pwd
+/home/kali
+                                                                           
+┌──(kali㉿kali)-[~]
+└─$ cd ~/Desktop               
+                                                                           
+┌──(kali㉿kali)-[~/Desktop]
+└─$ cat  > 10101010_1.txt
+^Z
+zsh: suspended  cat > 10101010_1.txt
+                                                                           
+┌──(kali㉿kali)-[~/Desktop]
+└─$ cat  > 10101010_2.txt                                                 
+^Z
+zsh: suspended  cat > 10101010_2.txt
+                                                                           
+┌──(kali㉿kali)-[~/Desktop]
+└─$ cat  > 10101010_3.txt                                                 
+^Z
+zsh: suspended  cat > 10101010_3.txt
+                                                                           
+┌──(kali㉿kali)-[~/Desktop]
+└─$ cat  > 10101010_4.txt                                                 
+^Z
+zsh: suspended  cat > 10101010_4.txt
+                                                                           
+┌──(kali㉿kali)-[~/Desktop]
+└─$ mkdir Name1                                                          
+                                                                           
+┌──(kali㉿kali)-[~/Desktop]
+└─$ mkdir Name2 
+                                                                           
+┌──(kali㉿kali)-[~/Desktop]
+└─$ mv 10101010_1.txt Name1
+    
+┌──(kali㉿kali)-[~/Desktop]
+└─$ mv 10101010_2.txt Name1
+                                                                           
+┌──(kali㉿kali)-[~/Desktop]
+└─$ mv 10101010_3.txt Name1
+                                                                           
+┌──(kali㉿kali)-[~/Desktop]
+└─$ cd Name1
+                                                                           
+┌──(kali㉿kali)-[~/Desktop/Name1]
+└─$ ls                                                                 
+10101010_1.txt  10101010_2.txt  10101010_3.txt
+
+┌──(kali㉿kali)-[~/Desktop/Name1]
+└─$ cp 10101010_1.txt 10101010_2.txt ~/Desktop/Name2
+
+┌──(kali㉿kali)-[~/Desktop/Name1]
+└─$ cd ..
+                                                                 
+┌──(kali㉿kali)-[~/Desktop]
+└─$ mkdir Name3  
+
+┌──(kali㉿kali)-[~/Desktop]
+└─$ cp -r Name1 Name3 
+
+┌──(kali㉿kali)-[~/Desktop]
+└─$ cd Name3
+
+┌──(kali㉿kali)-[~/Desktop/Name3]
+└─$ ls -all 
+total 12
+drwxr-xr-x 3 kali kali 4096 Mar  5 14:01 .
+drwxr-xr-x 8 kali kali 4096 Mar  5 14:00 ..
+drwxr-xr-x 2 kali kali 4096 Mar  5 14:01 Name1
+
+┌──(kali㉿kali)-[~/Desktop/Name3]
+└─$ chmod 755 Name1 
+
+┌──(kali㉿kali)-[~/Desktop/Name3]
+└─$ ls -all 
+total 12
+drwxr-xr-x 3 kali kali 4096 Mar  5 14:01 .
+drwxr-xr-x 8 kali kali 4096 Mar  5 14:00 ..
+drwxr-xr-x 2 kali kali 4096 Mar  5 14:01 Name1
+
+┌──(kali㉿kali)-[~/Desktop/Name3]
+└─$ cd ..  
+
+┌──(kali㉿kali)-[~/Desktop]
+└─$ ls -a
+.   ..   10101010_4.txt   Name1   Name2   Name3
+
+┌──(kali㉿kali)-[~/Desktop]
+└─$ sudo mv ~/Desktop/Name3 /
+[sudo] password for kali: 
+
+┌──(kali㉿kali)-[~/Desktop]
+└─$ cd / 
+
+┌──(kali㉿kali)-[/]
+└─$ ls -a
+.     .cache  initrd.img         lib32       media  root  srv     usr
+..    dev     initrd.img.old     lib64       mnt    run   sys     var
+bin   etc     install-script.sh  libx32      opt    sbin  tmp     vmlinuz
+boot  home    lib                lost+found  proc   snap  Name3   vmlinuz.old
+
+┌──(kali㉿kali)-[/]
+└─$ cd ~/Desktop
+
+┌──(kali㉿kali)-[~/Desktop]
+└─$ ls -a
+.   ..   10101010_4.txt   Name1   Name2   Name3
+
+┌──(kali㉿kali)-[~/Desktop]
+└─$ rm -r *
+zsh: sure you want to delete all 4 files in /home/kali/Desktop [y/n]? y
+
+┌──(kali㉿kali)-[~/Desktop]
+└─$ ls -a
+.   ..

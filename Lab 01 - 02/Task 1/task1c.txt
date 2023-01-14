@@ -1,0 +1,14 @@
+
+┌──(kali㉿kali)-[~/Desktop]
+└─$ pwd
+/home/kali/Desktop
+
+┌──(kali㉿kali)-[~/Desktop]
+└─$ cd /
+
+┌──(kali㉿kali)-[/]
+└─$ ls -a
+.     .cache  initrd.img         lib32       media  root  srv     usr
+..    dev     initrd.img.old     lib64       mnt    run   sys     var
+bin   etc     install-script.sh  libx32      opt    sbin  tmp     vmlinuz
+boot  home    lib

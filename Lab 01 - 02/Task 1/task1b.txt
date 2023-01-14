@@ -1,0 +1,25 @@
+    
+┌──(kali㉿kali)-[~/Desktop]
+└─$ pwd
+/home/kali/Desktop
+
+┌──(kali㉿kali)-[~/Desktop]
+└─$ cat  > course.txt
+Course Name:
+1. DATA COMMUNICATIONS
+2. OPERATING SYSTEMS
+3. PRINCIPLES OF PHYSICS II
+4. ELEMENTS OF ENVIRONMENTAL SCIENCES
+
+Course ID:
+CSE320, CSE321, PHY112, ENV103
+
+Section: CSE320[03], CSE321[08], PHY112[12], ENV103[06]
+^Z
+zsh: suspended  cat > course.txt
+
+┌──(kali㉿kali)-[~/Desktop]
+└─$ grep -n 'CSE' course.txt
+8:CSE320, CSE321, PHY112, ENV103
+10:Section: CSE320[03], CSE321[08], PHY112[12], ENV103[06]
+
