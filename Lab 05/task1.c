@@ -1,4 +1,3 @@
-// Program written by: Iftekhar Turja
 
 #include <pthread.h>
 #include <stdio.h>
@@ -35,7 +34,7 @@ void *producer(int *id)
     section.
     4. Producer can produce upto MAX
     */
-    // Write code here
+
     int i;
     for (i = 0; i < MAX; i++)
     {
@@ -66,7 +65,7 @@ void *consumer(int *id)
     section.
     4. Consumer can consume upto MAX
     */
-    // Write code here
+
     pthread_mutex_lock(&count_mutex);
     while (j < cCount)
     {
