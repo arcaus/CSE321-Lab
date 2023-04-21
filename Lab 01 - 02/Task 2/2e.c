@@ -1,4 +1,4 @@
-// written by Turja
+
 
 #include <stdio.h>
 #include <stdlib.h>
