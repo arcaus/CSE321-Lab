@@ -1,4 +1,3 @@
-// Program written by: Iftekhar Turja
 
 #include <stdio.h>
 
