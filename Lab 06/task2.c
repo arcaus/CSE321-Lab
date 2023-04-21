@@ -1,6 +1,4 @@
-// Program written by: Iftekhar Turja
 
-// Include required libraries
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
@@ -36,8 +34,7 @@ void safeSeq(int n, int m, int alloc[n][m], int max[n][m], int avail[m])
     // Find a safe sequence
     while (1)
     {
-        // Find a process which is not finished and whose needs can be satisfied
-        // with current work array
+        // Find a process which is not finished and whose needs can be satisfied with current work array
         int p = -1;
         for (i = 0; i < n; i++)
         {
@@ -76,8 +73,7 @@ void safeSeq(int n, int m, int alloc[n][m], int max[n][m], int avail[m])
         // Mark this process as finished
         finish[p] = 1;
 
-        // Add the allocated resources of the current process to the available
-        // resources
+        // Add the allocated resources of the current process to the available resources
         for (i = 0; i < m; i++)
             work[i] += alloc[p][i];
     }
