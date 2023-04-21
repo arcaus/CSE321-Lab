@@ -1,4 +1,3 @@
-// Program written by: Iftekhar Turja
 
 #include <pthread.h>
 #include <semaphore.h>
@@ -28,7 +27,6 @@ void *Farmer(void *far)
     //    3.print which farmer is keeping which crops in which room inside the critical section.
     //    4.print the whole warehouse buffer outside of the critical section
 
-    // Write code here
     int i;
     int *farmer_id = (int *)far;
     for (i = 0; i < MaxCrops; i++)
@@ -58,7 +56,6 @@ void *ShopOwner(void *sho)
        3.print which shop owner is taking which crops from which room inside the critical section.
        4.print the whole warehouse buffer outside of the critical section
        */
-    // Write code here
 
     int i;
     int *shop_id = (int *)sho;
@@ -85,8 +82,7 @@ void *ShopOwner(void *sho)
 int main()
 {
 
-    /*intializing thread,mutex,semaphore
-     */
+    /* intializing thread, mutex, semaphore */
 
     pthread_t Far[5], Sho[5];
     pthread_mutex_init(&mutex, NULL);
