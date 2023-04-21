@@ -1,8 +1,6 @@
-// Program written by: Iftekhar Turja
 
 #include <stdio.h>
 
-/*Given the list of processes, their CPU burst times, arrival times and time quantum and implement priority scheduling algorithm, on the processes. Finally compute and print the completion Time(CT) for each process, and their Turnaround Time(TAT), and Waiting Time(WT).*/
 
 // priority scheduling algorithm
 int main()
