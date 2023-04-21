@@ -1,8 +1,6 @@
-// Program written by: Iftekhar Turja
 
 #include <stdio.h>
 
-/*Given the list of processes, their CPU burst times, arrival times and time quantum and implement round robin scheduling algorithm, on the processes. Finally compute and print the completion Time(CT) for each process, and their Turnaround Time(TAT), and Waiting Time(WT).*/
 
 // round robin scheduling algorithm
 
