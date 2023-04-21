@@ -4,7 +4,7 @@
 #include <sys/types.h>
 #include <string.h>
 
-// write a sort program to sort in descending order
+// sort in descending order
 void sort(int *arr, int size)
 {
     int i, j, temp;
