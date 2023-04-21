@@ -1,4 +1,4 @@
-// Program writte by: Iftekhar Turja
+// the following code works in Linux only
 
 #include <stdio.h>
 #include <stdlib.h>
