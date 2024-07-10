@@ -1,10 +1,9 @@
-
+// written by arcaus
 
 #include <stdio.h>
 #include <stdlib.h>
 
 // function to remove extra whitespaces
-
 void rmv_ew_spaces(char *str)
 {
     int j = 0;
@@ -19,15 +18,39 @@ void rmv_ew_spaces(char *str)
     str[j] = '\0';
 }
 
-// main function
-
-int main()
+int main(int argc, char *argv[])
 {
-    char str[] = {};
-    printf("Enter a sentence: ");
-    scanf("%[^\n]s", str);
-    getchar();
+    FILE *inputFile, *outputFile;
+    char outputFileName[] = "output.txt";
+    char str[100];
+
+    if (argc < 2)
+    {
+        printf("Usage: %s <input_file>\n", argv[0]);
+        return 1;
+    }
+
+    inputFile = fopen(argv[1], "r");
+    if (inputFile == NULL)
+    {
+        printf("Unable to open input file.\n");
+        return 1;
+    }
+
+    outputFile = fopen(outputFileName, "w");
+    if (outputFile == NULL)
+    {
+        printf("Unable to open output file.\n");
+        fclose(inputFile);
+        return 1;
+    }
+
+    fgets(str, sizeof(str), inputFile);
     rmv_ew_spaces(str);
-    printf("%s\n", str);
+    fprintf(outputFile, "%s", str);
+
+    fclose(inputFile);
+    fclose(outputFile);
+
     return 0;
 }
