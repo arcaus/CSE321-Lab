@@ -1,64 +1,65 @@
-
+// written by arcaus
 
 #include <stdio.h>
-#include <stdlib.h>
-#include <math.h>
-#include <string.h>
+#include <stdbool.h>
 
 // function to check password
-
-void check_password(char *str)
+void check_password(const char *str)
 {
-    int lowercase = 0, uppercase = 0, digit = 0, special = 0;
+    bool lowercase = false, uppercase = false, digit = false, special = false;
+
     for (int i = 0; str[i] != '\0'; i++)
     {
         if (str[i] >= 'a' && str[i] <= 'z')
         {
-            lowercase = 1;
+            lowercase = true;
         }
         else if (str[i] >= 'A' && str[i] <= 'Z')
         {
-            uppercase = 1;
+            uppercase = true;
         }
         else if (str[i] >= '0' && str[i] <= '9')
         {
-            digit = 1;
+            digit = true;
         }
         else if (str[i] == '_' || str[i] == '$' || str[i] == '#' || str[i] == '@')
         {
-            special = 1;
+            special = true;
         }
     }
-    if (lowercase == 0)
+
+    if (!lowercase)
     {
-        printf("Lowercase Missing\n");
+        printf("Lowercase character missing\n");
     }
-    if (uppercase == 0)
+    if (!uppercase)
     {
-        printf("Uppercase Missing\n");
+        printf("Uppercase character missing\n");
     }
-    if (digit == 0)
+    if (!digit)
     {
         printf("Digit Missing\n");
     }
-    if (special == 0)
+    if (!special)
     {
-        printf("Special Missing\n");
+        printf("Special character missing\n");
     }
-    if (lowercase == 1 && uppercase == 1 && digit == 1 && special == 1)
+
+    if (lowercase && uppercase && digit && special)
     {
         printf("OK\n");
     }
 }
 
-// main function
-
 int main()
 {
-    char str[] = {};
+    char str[100];
+
     printf("Enter a password: ");
     scanf("%[^\n]s", str);
     getchar();
+
     check_password(str);
+
     return 0;
 }
