@@ -1,40 +1,45 @@
-
+// written by arcaus
 
 #include <stdio.h>
 #include <stdlib.h>
+#include <stdbool.h>
+#include <string.h>
 
-// function to check email address
-
-void check_email(char *email)
+// function to check email
+bool checkEmail(char *email)
 {
-    int i = 0;
-    while (email[i] != '\0')
-    {
-        if (email[i] == '@')
-        {
-            if (email[i + 1] != 's')
-            {
-                printf("Email address is outdated.\n");
-                return;
-            }
-            else if (email[i + 1] == 's' && email[i + 2] == 'h' && email[i + 3] == 'e' && email[i + 4] == 'b' && email[i + 5] == 'a' && email[i + 6] == '.' && email[i + 7] == 'x' && email[i + 8] == 'y' && email[i + 9] == 'z')
-            {
-                printf("Email address is okay.\n");
-                return;
-            }
-        }
-        i++;
-    }
-    printf("Email address is outdated.\n");
-}
+    char *suffix = "@sheba.xyz";
+    int suffixLength = strlen(suffix);
+    int emailLength = strlen(email);
 
-// main function
+    if (emailLength < suffixLength)
+    {
+        return true;
+    }
+
+    char *emailSuffix = email + emailLength - suffixLength;
+    if (strcmp(emailSuffix, suffix) != 0)
+    {
+        return true;
+    }
+
+    return false;
+}
 
 int main()
 {
-    char email[] = {};
+    char email[100];
     printf("Enter email address: ");
-    scanf("%s", email);
-    check_email(email);
+    scanf("%99s", email);
+
+    if (checkEmail(email))
+    {
+        printf("Email address is outdated.\n");
+    }
+    else
+    {
+        printf("Email address is okay.\n");
+    }
+
     return 0;
 }
