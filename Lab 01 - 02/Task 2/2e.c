@@ -1,30 +1,33 @@
-
+// written by arcaus
 
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
 
 // function to find palindrome
-
 void palindrome(char *str)
 {
-    int len = strlen(str);
-    for (int i = 0, j = len - 1; i < j; i++, j--)
+    char *start = str;
+    char *end = str + strlen(str) - 1;
+
+    while (start < end)
     {
-        if (str[i] != str[j])
+        if (*start != *end)
         {
             printf("Not Palindrome\n");
             return;
         }
+
+        start++;
+        end--;
     }
+
     printf("Palindrome\n");
 }
 
-// main function
-
 int main()
 {
-    char str[] = {};
+    char str[100];
     printf("Enter a sentence: ");
     scanf("%[^\n]s", str);
     getchar();
