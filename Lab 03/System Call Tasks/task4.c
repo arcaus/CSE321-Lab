@@ -1,33 +1,34 @@
-
-
 #include <stdio.h>
 #include <stdlib.h>
 #include <unistd.h>
 #include <sys/types.h>
 #include <string.h>
 
-/*
-Question:
-Write a program that will create a child process and the child process will first
-sort the array that you have declared in this program. And then, the parent process will print the
-odd/even status for each number in the array.
-*/
-
 // main function
-int main()
+int main(int argc, char *argv[])
 {
-    pid_t pid, status;
-    pid = fork();
-    // array declaration
-    int arr[10] = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10};
+    if (argc < 2)
+    {
+        printf("Usage: %s <numbers>\n", argv[0]);
+        return 1;
+    }
+    int n = argc - 1;
+    int arr[n];
+
+    for (int i = 0; i < n; i++)
+    {
+        arr[i] = atoi(argv[i + 1]);
+    }
+
+    pid_t pid = fork();
     if (pid == 0)
     {
-        execl("/home/kali/Desktop/CSE321_LAB3/sort.c", 10, *arr);
+        execl("path_of_sort.c", 10, *arr); // change this line and add the absolute path of the sort.c file here
     }
     else if (pid > 0)
     {
         wait(&status);
-        execl("/home/kali/Desktop/CSE321_LAB3/oddeven.c", 10, *arr);
+        execl("path_of_oddeven.c", 10, *arr); // change this line and add the absolute path of the oddeven.c file here
     }
     return 0;
 }
